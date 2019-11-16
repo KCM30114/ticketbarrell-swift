@@ -1,15 +1,15 @@
-# ticketbarrell-swift
+# ticketbarrel-swift
 an exercise to emulate the "raffle ticket" experience from ticket selling, winner pulling, interactions between the event sponsor and the participants.
 
 ## Example Scenario:
 
-A person goes to a social event. As part of the social event, a drawing will be held to award prizes.  At the event, the Person (**TICKET-HOLDER**) obtains (buys, is given) one or more tickets from a **TICKET-ATTENDANT**.  These tickets are typcially on a paper roll (**TICKET-ROLL**) and each **TICKET** has two sections to it -- an "upper part" and a "lower part".  On both parts, the same sequence number is printed.  When the **TICKET-ATTENDANT** provides the sequential **TICKET** to the **TICKET-HOLDER**, the **TICKET-HOLDER** gets the two part ticket, puts some identifier (name, phone number, email, etc) on one part of the **TICKET** and deposits that written on **TICKET** into a **TICKET-BARRELL**.  The **TICKET-HOLDER** then keeps the opposite half of the **TICKET** until the **TICKET-PULL** event happens. 
+A person goes to a social event. As part of the social event, a drawing will be held to award prizes.  At the event, the Person (**TICKET-HOLDER**) obtains (buys, is given) one or more tickets from a **TICKET-ATTENDANT**.  These tickets are typcially on a paper roll (**TICKET-ROLL**) and each **TICKET** has two sections to it -- an "upper part" and a "lower part".  On both parts, the same sequence number is printed.  When the **TICKET-ATTENDANT** provides the sequential **TICKET** to the **TICKET-HOLDER**, the **TICKET-HOLDER** gets the two part ticket, puts some identifier (name, phone number, email, etc) on one part of the **TICKET** and deposits that written on **TICKET** into a **TICKET-BARREL**.  The **TICKET-HOLDER** then keeps the opposite half of the **TICKET** until the **TICKET-PULL** event happens. 
 
-At the **TICKET-PULL** event, the **TICKET-ATTENDANT** will reach into the **TICKET-BARRELL** and randomly pull a **TICKET** out of the barrell can then call out the sequence number.  If the **TICKET-HOLDER** is present, they identify (usually YELL OUT) that they have the matching **TICKET** half, present it to the **TICKET-ATTENDANT** for verification, and if there is a match, the prize is then awarded to the **TICKET-HOLDER**.  The winning **TICKET** is usually then collected and destroyed.  The next **TICKET-PULL** event starts, and this process repeats until all awards or prizes are given out. 
+At the **TICKET-PULL** event, the **TICKET-ATTENDANT** will reach into the **TICKET-BARREL** and randomly pull a **TICKET** out of the barrel can then call out the sequence number.  If the **TICKET-HOLDER** is present, they identify (usually YELL OUT) that they have the matching **TICKET** half, present it to the **TICKET-ATTENDANT** for verification, and if there is a match, the prize is then awarded to the **TICKET-HOLDER**.  The winning **TICKET** is usually then collected and destroyed.  The next **TICKET-PULL** event starts, and this process repeats until all awards or prizes are given out. 
 
 Some permutations to the **TICKET-PULL** Event:
 1) The **TICKET-HOLDER** must be present to win (or not).
-2) If the called **TICKET** is not redeemed, it can be returned to the barrell (or not)
+2) If the called **TICKET** is not redeemed, it can be returned to the barrel (or not)
 3) **TICKET-ROLL** can have a finite number of tickets available (or not)
 4) Tickets can be sold up to a particular "Closing time"
 5) Tickets cannot be purchased after the end of the **TICKET-PULL** event
@@ -21,7 +21,7 @@ Some permutations to the **TICKET-PULL** Event:
 
 ### METHODS
 - set up ticket roll
-- pull a ticket to be sold to ticket holder and ticket barrell
+- pull a ticket to be sold to ticket holder and ticket barrel
 - status of unsold tickets on ticket roll
 
 
@@ -30,7 +30,7 @@ Some permutations to the **TICKET-PULL** Event:
 - number of tickets in roll
 
 
-**TICKET-BARRELL** -- container of all **TICKETS** taken from a **TICKET-ROLL** for the purposes of that specific **EVENT**.
+**TICKET-BARREL** -- container of all **TICKETS** taken from a **TICKET-ROLL** for the purposes of that specific **EVENT**.
 
 ### METHODS
 - hold tickets for drawing
@@ -52,7 +52,7 @@ Some permutations to the **TICKET-PULL** Event:
 - set start and end time of selling tickets
 - set start and end time of ticket pull
 - set start and end time of winning ticket claims
-
+- set if a winning and claimed ticket can be put back into the barrel to possibly be drawn again
 
 **TICKET** -- an instance of a ticket. A **TICKET** has 2 parts to it, one part stays with the event and is put into the **TICKET-BARRELL**. The other half is given to the **TICKET-HOLDER**.
 
@@ -64,7 +64,7 @@ Some permutations to the **TICKET-PULL** Event:
 
 ### METHODS
 - check owned tickets
-- ckeck tickets for winning status
+- ckeck tickets for winning status and claim winning from **TICKET-ATTENDANT**
 - buy tickets
 - delete tickets
 
